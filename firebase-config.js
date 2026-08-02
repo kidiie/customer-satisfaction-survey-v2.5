@@ -9,7 +9,7 @@ const firebaseConfig = {
   projectId: "mrrhl-survey2",
   storageBucket: "mrrhl-survey2.firebasestorage.app",
   messagingSenderId: "542832404991",
-  appId: "1:542832404991:web:52e32139ff5a9b84a81fca"
+  appId: "1:542832404991:web:ed61db1edc35005ca81fca"
 };
 
 // Initialize Firebase
