@@ -100,9 +100,9 @@
 
         window.MRRHL_RESPONSES = responses; // used by export.js
 
-        renderStats(responses);
-        renderChart(responses);
-        renderTable(responses);
+        try { renderStats(responses); } catch (e) { console.error("renderStats failed:", e); }
+        try { renderChart(responses); } catch (e) { console.error("renderChart failed:", e); }
+        try { renderTable(responses); } catch (e) { console.error("renderTable failed:", e); }
       })
       .catch(function (error) {
         console.error("Error loading responses:", error);
@@ -161,6 +161,13 @@
   /* ---------------- Chart ---------------- */
 
   function renderChart(responses) {
+    if (typeof Chart === "undefined") {
+      console.warn("Chart.js did not load (likely blocked by network/ad-blocker) — skipping the ratings chart. Stats and table will still work.");
+      const chartWrap = document.querySelector(".chart-wrap");
+      if (chartWrap) chartWrap.innerHTML = '<p style="text-align:center;color:#4A6360;padding:24px;">Chart could not load. This does not affect your saved data — please check your internet connection or ad-blocker and reload.</p>';
+      return;
+    }
+
     const categories = [
       { key: "staffAvailability", label: "Availability" },
       { key: "staffGreeting", label: "Greeting" },
