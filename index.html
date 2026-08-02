@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Customer Satisfaction Survey — Manyara Regional Referral Hospital Laboratory</title>
+<meta name="description" content="Share your experience with Manyara Regional Referral Hospital Laboratory to help us improve our services." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <svg class="crest" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
+    <path d="M24 14v20M14 24h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M14 30c2-6 4-10 6-3s4 3 6-4 4-2 8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+  </svg>
+  <div class="eyebrow">Document No. MRRHL/F/020 · Version 4</div>
+  <h1>Customer Satisfaction Survey Form</h1>
+  <p class="subtitle">
+    Please tick how you feel about our services.<br/>
+    Tafadhali jibu jinsi unavyohisi kuhusu huduma zetu.
+  </p>
+  <span class="lang-tag">English &amp; Kiswahili</span>
+</header>
+
+<!-- Progress bar (sticks under the header while filling the form) -->
+<div class="progress-shell" id="progressShell">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <div class="progress-meta">
+    <span id="progressLabel">0% complete</span>
+    <span id="progressCount">0 of 7 answered</span>
+  </div>
+</div>
+
+<!-- Gentle encouragement toast -->
+<div class="heart-toast" id="heartToast" role="status" aria-live="polite"></div>
+
+<main class="page">
+
+  <div class="form-wrap" id="formWrap">
+    <form id="surveyForm" novalidate>
+
+      <!-- Question 1 -->
+      <section class="card">
+        <span class="q-number">1</span>
+        <h3>Was the staff available in a timely manner?</h3>
+        <p class="q-sw">Je! Watoa huduma hupatikana wanapohitajika?</p>
+        <div class="rating-meter">
+          <div class="rating-track" data-question="q1_availability">
+            <label class="rating-option"><input type="radio" name="q1_availability" value="1"><span class="rating-dot">1</span><span class="rating-label">Poor / Mbaya</span></label>
+            <label class="rating-option"><input type="radio" name="q1_availability" value="2"><span class="rating-dot">2</span><span class="rating-label">Fair / Kawaida</span></label>
+            <label class="rating-option"><input type="radio" name="q1_availability" value="3"><span class="rating-dot">3</span><span class="rating-label">Average / Wastani</span></label>
+            <label class="rating-option"><input type="radio" name="q1_availability" value="4"><span class="rating-dot">4</span><span class="rating-label">Good / Nzuri</span></label>
+            <label class="rating-option"><input type="radio" name="q1_availability" value="5"><span class="rating-dot">5</span><span class="rating-label">Excellent / Nzuri Sana</span></label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="q1_availability">⚠ Please select a rating / Tafadhali chagua kiwango</div>
+      </section>
+
+      <!-- Question 2 -->
+      <section class="card">
+        <span class="q-number">2</span>
+        <h3>Did the staff greet and offer you help?</h3>
+        <p class="q-sw">Je! Mtoa huduma amekusalimia na kukusikiliza mahitaji yako?</p>
+        <div class="rating-meter">
+          <div class="rating-track" data-question="q2_greeting">
+            <label class="rating-option"><input type="radio" name="q2_greeting" value="1"><span class="rating-dot">1</span><span class="rating-label">Poor / Mbaya</span></label>
+            <label class="rating-option"><input type="radio" name="q2_greeting" value="2"><span class="rating-dot">2</span><span class="rating-label">Fair / Kawaida</span></label>
+            <label class="rating-option"><input type="radio" name="q2_greeting" value="3"><span class="rating-dot">3</span><span class="rating-label">Average / Wastani</span></label>
+            <label class="rating-option"><input type="radio" name="q2_greeting" value="4"><span class="rating-dot">4</span><span class="rating-label">Good / Nzuri</span></label>
+            <label class="rating-option"><input type="radio" name="q2_greeting" value="5"><span class="rating-dot">5</span><span class="rating-label">Excellent / Nzuri Sana</span></label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="q2_greeting">⚠ Please select a rating / Tafadhali chagua kiwango</div>
+      </section>
+
+      <!-- Question 3 -->
+      <section class="card">
+        <span class="q-number">3</span>
+        <h3>Was the staff friendly and cheerful throughout?</h3>
+        <p class="q-sw">Je! Mtoa huduma ameonyesha urafiki na tabasamu wakati wote?</p>
+        <div class="rating-meter">
+          <div class="rating-track" data-question="q3_friendliness">
+            <label class="rating-option"><input type="radio" name="q3_friendliness" value="1"><span class="rating-dot">1</span><span class="rating-label">Poor / Mbaya</span></label>
+            <label class="rating-option"><input type="radio" name="q3_friendliness" value="2"><span class="rating-dot">2</span><span class="rating-label">Fair / Kawaida</span></label>
+            <label class="rating-option"><input type="radio" name="q3_friendliness" value="3"><span class="rating-dot">3</span><span class="rating-label">Average / Wastani</span></label>
+            <label class="rating-option"><input type="radio" name="q3_friendliness" value="4"><span class="rating-dot">4</span><span class="rating-label">Good / Nzuri</span></label>
+            <label class="rating-option"><input type="radio" name="q3_friendliness" value="5"><span class="rating-dot">5</span><span class="rating-label">Excellent / Nzuri Sana</span></label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="q3_friendliness">⚠ Please select a rating / Tafadhali chagua kiwango</div>
+      </section>
+
+      <!-- Question 4 -->
+      <section class="card">
+        <span class="q-number">4</span>
+        <h3>Did the staff answer your questions?</h3>
+        <p class="q-sw">Je! Mtoa huduma alijibu maswali yako pale ulipomuuliza?</p>
+        <div class="rating-meter">
+          <div class="rating-track" data-question="q4_answered_questions">
+            <label class="rating-option"><input type="radio" name="q4_answered_questions" value="1"><span class="rating-dot">1</span><span class="rating-label">Poor / Mbaya</span></label>
+            <label class="rating-option"><input type="radio" name="q4_answered_questions" value="2"><span class="rating-dot">2</span><span class="rating-label">Fair / Kawaida</span></label>
+            <label class="rating-option"><input type="radio" name="q4_answered_questions" value="3"><span class="rating-dot">3</span><span class="rating-label">Average / Wastani</span></label>
+            <label class="rating-option"><input type="radio" name="q4_answered_questions" value="4"><span class="rating-dot">4</span><span class="rating-label">Good / Nzuri</span></label>
+            <label class="rating-option"><input type="radio" name="q4_answered_questions" value="5"><span class="rating-dot">5</span><span class="rating-label">Excellent / Nzuri Sana</span></label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="q4_answered_questions">⚠ Please select a rating / Tafadhali chagua kiwango</div>
+      </section>
+
+      <!-- Question 5 -->
+      <section class="card">
+        <span class="q-number">5</span>
+        <h3>Did the staff show knowledge of the laboratory services?</h3>
+        <p class="q-sw">Je! Mtoa huduma alikuwa mwelewa kwa huduma aliyotoa?</p>
+        <div class="rating-meter">
+          <div class="rating-track" data-question="q5_knowledge">
+            <label class="rating-option"><input type="radio" name="q5_knowledge" value="1"><span class="rating-dot">1</span><span class="rating-label">Poor / Mbaya</span></label>
+            <label class="rating-option"><input type="radio" name="q5_knowledge" value="2"><span class="rating-dot">2</span><span class="rating-label">Fair / Kawaida</span></label>
+            <label class="rating-option"><input type="radio" name="q5_knowledge" value="3"><span class="rating-dot">3</span><span class="rating-label">Average / Wastani</span></label>
+            <label class="rating-option"><input type="radio" name="q5_knowledge" value="4"><span class="rating-dot">4</span><span class="rating-label">Good / Nzuri</span></label>
+            <label class="rating-option"><input type="radio" name="q5_knowledge" value="5"><span class="rating-dot">5</span><span class="rating-label">Excellent / Nzuri Sana</span></label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="q5_knowledge">⚠ Please select a rating / Tafadhali chagua kiwango</div>
+      </section>
+
+      <!-- Question 6 -->
+      <section class="card">
+        <span class="q-number">6</span>
+        <h3>Overall, how would you rate our customer service?</h3>
+        <p class="q-sw">Kiujumla toa maoni kuhusu huduma zetu za Maabara.</p>
+        <div class="rating-meter">
+          <div class="rating-track" data-question="q6_overall">
+            <label class="rating-option"><input type="radio" name="q6_overall" value="1"><span class="rating-dot">1</span><span class="rating-label">Poor / Mbaya</span></label>
+            <label class="rating-option"><input type="radio" name="q6_overall" value="2"><span class="rating-dot">2</span><span class="rating-label">Fair / Kawaida</span></label>
+            <label class="rating-option"><input type="radio" name="q6_overall" value="3"><span class="rating-dot">3</span><span class="rating-label">Average / Wastani</span></label>
+            <label class="rating-option"><input type="radio" name="q6_overall" value="4"><span class="rating-dot">4</span><span class="rating-label">Good / Nzuri</span></label>
+            <label class="rating-option"><input type="radio" name="q6_overall" value="5"><span class="rating-dot">5</span><span class="rating-label">Excellent / Nzuri Sana</span></label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="q6_overall">⚠ Please select a rating / Tafadhali chagua kiwango</div>
+      </section>
+
+      <!-- Best liked -->
+      <section class="card">
+        <span class="q-number">7</span>
+        <h3>What best did you like about our customer service? <span class="optional-tag">(Optional)</span></h3>
+        <p class="q-sw">Je! Ni nini bora ulipenda kuhusu huduma zetu?</p>
+        <div class="field">
+          <textarea id="bestLiked" name="bestLiked" placeholder="Tell us what stood out... / Tuambie kilichokuvutia..."></textarea>
+        </div>
+      </section>
+
+      <!-- Improvement suggestion -->
+      <section class="card">
+        <span class="q-number">8</span>
+        <h3>How could we improve our customer service? <span class="optional-tag">(Optional)</span></h3>
+        <p class="q-sw">Je! Tunawezaje kuboresha huduma yetu ya wateja?</p>
+        <div class="field">
+          <textarea id="improvementSuggestion" name="improvementSuggestion" placeholder="Share your suggestions... / Toa mapendekezo yako..."></textarea>
+        </div>
+      </section>
+
+      <!-- Turnaround time satisfaction -->
+      <section class="card">
+        <span class="q-number">9</span>
+        <h3>Are you satisfied with the laboratory turnaround time for tests?</h3>
+        <p class="q-sw">Je! Umeridhika na muda wa kusubiri majibu ya maabara?</p>
+        <div class="chip-group" data-question="turnaround_satisfied">
+          <div class="chip">
+            <input type="radio" name="turnaround_satisfied" id="tatYes" value="Yes / Ndio">
+            <label for="tatYes">Yes / Ndio</label>
+          </div>
+          <div class="chip">
+            <input type="radio" name="turnaround_satisfied" id="tatNo" value="No / Hapana">
+            <label for="tatNo">No / Hapana</label>
+          </div>
+        </div>
+        <div class="error-msg" data-error-for="turnaround_satisfied">⚠ Please choose an option / Tafadhali chagua chaguo</div>
+
+        <div class="field" id="turnaroundSpecifyWrap" style="display:none; margin-top:16px;">
+          <label for="turnaroundSpecify">If No, please specify <span class="optional-tag">/ Ikiwa Hapana tafadhali elezea</span></label>
+          <input type="text" id="turnaroundSpecify" name="turnaroundSpecify" placeholder="Tell us more...">
+        </div>
+      </section>
+
+      <!-- Interviewer / contact details -->
+      <section class="card">
+        <span class="q-number">10</span>
+        <h3>Your details <span class="optional-tag">(Optional)</span></h3>
+        <p class="q-sw">Taarifa zako (Si lazima)</p>
+        <div class="field">
+          <label for="interviewerName">Name of the interviewer <span class="optional-tag">(if staff-assisted)</span></label>
+          <input type="text" id="interviewerName" name="interviewerName" placeholder="e.g. Jina la mhoji">
+        </div>
+        <div class="field">
+          <label for="contactPhone">Namba ya simu / Phone number</label>
+          <input type="tel" id="contactPhone" name="contactPhone" placeholder="e.g. 07XX XXX XXX">
+        </div>
+        <div class="field">
+          <label for="contactEmail">Barua pepe / Email address</label>
+          <input type="email" id="contactEmail" name="contactEmail" placeholder="e.g. name@example.com">
+          <div class="error-msg" data-error-for="contactEmail">⚠ Please enter a valid email / Tafadhali weka barua pepe sahihi</div>
+        </div>
+      </section>
+
+      <div class="submit-section">
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="btn-label" id="submitBtnLabel">Submit Feedback</span>
+        </button>
+        <p class="submit-note">Your response is confidential and helps us improve laboratory services for every patient.</p>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Success / Thank you screen -->
+  <div class="success-screen" id="successScreen">
+    <div class="success-icon-wrap">
+      <svg viewBox="0 0 52 52" fill="none">
+        <path class="checkmark-path" d="M14 27l8 8 16-18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>Asante sana! Thank you for sharing your experience.</h2>
+    <p>Thank you for sharing your experience with Manyara Regional Referral Hospital Laboratory. Your feedback helps us provide safer, faster and more compassionate laboratory services for every patient.</p>
+    <p style="font-style:italic;">Asante kwa kutupa maoni yako. Maoni yako yanatusaidia kutoa huduma bora, salama na za haraka zaidi za maabara kwa kila mgonjwa.</p>
+
+    <div class="badges">
+      <div class="success-badge">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 5a5.5 5.5 0 019.5 7c-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Care improves</span>
+      </div>
+      <div class="success-badge">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Confidential</span>
+      </div>
+      <div class="success-badge">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span>Reviewed weekly</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  © Manyara Regional Referral Hospital Laboratory — Document No. MRRHL/F/020, Version 4
+</footer>
+
+<!-- Firebase SDKs (compat, no build tools — works on GitHub Pages) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="firebase-config.js"></script>
+<script src="js/survey.js"></script>
+</body>
+</html>
